@@ -4,12 +4,16 @@
     <meta name="viewport" content="with= device-width, initial-scale=1.0">
     <title>Meal Ticket</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <section class = "header">
       <nav>
         <a href="index.html"><img src="insert img link"></a>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
             <li><a href="">HOME</a></li>
             <li><a href="">ABOUT</a></li>
@@ -18,9 +22,83 @@
             <li><a href="">CONTACT</a></li>
           </ul>
         </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
 
+      <div class="text-box">
+        <h1>Meal Ticket Machine</h1>
+        <p>Welcome to the store!</p>
+        <a href="" class="openbtn" onclick="openForm()">Log in/ Register</a>
+      </div>
+
+      <div id = "myOverlay" class="overlay">
+        <span class = "closebtn" onclick= "closeForm()" title = "Close Overlay"> &#215 </span>
+        <div class="wrap">
+          <h2>Sign Up Here</h2>
+          <form>
+            <input type="text" placeholder = "Username">
+            <input type="text" placeholder = "Email">
+            <input type="password" placeholder = "Password">
+            <input type="password" placeholder = "Re-enter Password">
+            <input type="submit" placeholder = "Start!">
+          </form>
+        </div>
+      </div>
+
     </section>
+<!---- Other content ---->
+    <section class="content">
+      <h1>An Interesting Title</h1>
+      <p>Random content, filler that will be replaced later in the future, random Latin.</p>
+
+      <div class="row">
+        <div class="content-col">
+          <h3>Lower title</h3>
+          <p>Random content, filler that will be replaced later in the future, random Latin.
+          Random content, filler that will be replaced later in the future, random Latin.
+          Random content, filler that will be replaced later in the future, random Latin.
+          </p>
+        </div>
+        <div class="content-col">
+          <h3>Lower title</h3>
+          <p>Random content, filler that will be replaced later in the future, random Latin.
+          Random content, filler that will be replaced later in the future, random Latin.
+          Random content, filler that will be replaced later in the future, random Latin.
+          </p>
+        </div>
+        <div class="content-col">
+          <h3>Lower title</h3>
+          <p>Random content, filler that will be replaced later in the future, random Latin.
+          Random content, filler that will be replaced later in the future, random Latin.
+          Random content, filler that will be replaced later in the future, random Latin.
+          </p>
+        </div>
+      </div>
+    </section>
+
+<!---- Javascript function for Menu Toggle ---->
+
+<script>
+  var navLinks = document.getElementById("navLinks")
+
+  function showMenu(){
+    navLinks.style.right = "0";
+  }
+  function hideMenu(){
+    navLinks.style.right = "-200px";
+</script>
+
+<!---- Javascript for login ---->
+
+<script>
+  function openForm(){
+    event.preventDefault();
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  function closeForm(){
+    document.getElementById("myOverlay").style.display = "none";
+  }
+</script>
 
   </body>
 </html>
